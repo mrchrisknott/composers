@@ -7222,27 +7222,28 @@ header .page-header-top {
     max-width: 200px; }
 
 header nav {
-  background-color: #7c702a; }
+  background-color: #474222; }
   header nav a,
   header nav a:hover,
   header nav a:active {
     text-transform: uppercase;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 600;
     color: #393e4f; }
 
 .composer-slide-card {
   margin: 10px;
-  background-color: #FFF;
+  background-color: #f3eccd;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
   padding: 12px;
   text-align: center;
   border: solid 1px #eaeaea;
-  border-radius: 5px; }
+  border-radius: 7px; }
   .composer-slide-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     padding-top: 10px; }
   .composer-slide-card .composer-slide-card-img {
-    height: 200px;
+    height: 250px;
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -7252,5 +7253,32 @@ header nav {
 
 body {
   background-color: #2c2c2c; }
+
+h1 {
+  color: #fff; }
+
+.main-p-text {
+  font-size: 1.3em; }
+
+p {
+  color: #fff; }
+
+q {
+  color: #f3eccd; }
+
+hr {
+  background: #474222;
+  height: 3px;
+  margin-top: 125px; }
+
+.my-carousel {
+  margin-top: 100px;
+  margin-bottom: 75px; }
+
+.social-media {
+  color: #e2e1da; }
+
+.copyright {
+  color: #c0bfba; }
 
 /*# sourceMappingURL=styles.css.map */

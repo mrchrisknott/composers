@@ -1,3 +1,26 @@
 body {
     background-color: $primary-color;
 }
+h1 {
+    color: $text-color;
+}
+
+.main-p-text {
+    
+    font-size: 1.3em;
+}
+
+p {
+    color: $text-color; 
+}
+
+q {
+    
+    color: $third-color;
+}
+
+hr {
+    background: $secondary-color;
+    height: 3px;
+    margin-top: 125px;
+}

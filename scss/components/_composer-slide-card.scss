@@ -1,19 +1,19 @@
 .composer-slide-card {
     margin: 10px;
-    background-color: #FFF;
+    background-color: $third-color;
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
     padding: 12px;
     text-align: center;
     border: solid 1px #eaeaea;
-    border-radius: 5px;
+    border-radius: 7px;
 
     h3 {
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         padding-top: 10px;
     }
 
     .composer-slide-card-img {
-        height: 200px;
+        height: 250px;
         background-repeat: no-repeat;
         background-position: center center;
         -webkit-background-size: cover;
