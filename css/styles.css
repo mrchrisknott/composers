@@ -7226,9 +7226,8 @@ header nav {
   header nav a,
   header nav a:hover,
   header nav a:active {
-    text-transform: uppercase;
-    font-size: 1.5em;
-    font-weight: 600;
+    font-size: 1.4em;
+    font-weight: 500;
     color: #393e4f; }
 
 .composer-slide-card {
@@ -7258,7 +7257,7 @@ h1 {
   color: #fff; }
 
 .main-p-text {
-  font-size: 1.3em; }
+  font-size: 1.2em; }
 
 p {
   color: #fff; }
@@ -7270,6 +7269,9 @@ hr {
   background: #474222;
   height: 3px;
   margin-top: 125px; }
+
+input, textarea {
+  color: #FFF; }
 
 .my-carousel {
   margin-top: 100px;

@@ -2,7 +2,6 @@
 require_once(__DIR__.'/includes/db.php')
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,37 +22,32 @@ require_once(__DIR__.'/includes/db.php')
     </div>
     -->
 
-
-
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">ABC Music</a>
+        <a class="navbar-brand" href="index.php">ABC Music Recordings</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-
-
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="index.php">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Search</a>
+              <a class="nav-link" href="#">SEARCH</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Admin</a>
+              <a class="nav-link" href="admin.php">ADMIN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">CONTACT</a>
             </li>
-
           </ul>
         </div>
       </div>
@@ -137,16 +131,7 @@ require_once(__DIR__.'/includes/db.php')
       <br>
       <p class="main-p-text">Johann Sebastian Bach said, <q><i>It’s easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself.</i></q></p>.
 
-
-
-
-
   </div>
-
-
-
-
-
 
   <footer class="mt-5 text-center">
     <hr>
@@ -165,10 +150,7 @@ require_once(__DIR__.'/includes/db.php')
       </div>
     </div>
     <br>
-    
-
-
-
+   
   </footer>
 
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
