@@ -47,7 +47,7 @@
                                 <a class="nav-link" href="about.php">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="template.php">Search</a>
+                                <a class="nav-link" href="search.php">Search</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.php">Contact</a>
