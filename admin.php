@@ -1,89 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    require_once(__DIR__.'/includes/db.php');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Music Publishing</title>
-    <link href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css" rel="stylesheet">
-    <link href="./node_modules/@glidejs/glide/dist/css/glide.theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/0e3065f827.js" crossorigin="anonymous"></script>
-</head>
+    if($_POST){ 
+        // this code runs when form is submitted.
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-<body>
-    <header>
-        <!--
-    <div class="page-header-top container">
-      <a href="index.html"><img src="./images/whiteSquare.jpg" alt="Logo" /></a>
-    </div>
-    -->
+        // check that the user exists
+        $stmt = $Conn->prepare('SELECT * FROM users WHERE userId = :userid AND password = :userpassword');
+        $stmt->execute([
+            "userid" => $username,
+            "userpassword" => $password
+        ]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">ABC Music Recordings</a>
+        if($user) {
+            $_SESSION['is_admin'] = true;
+        }else{
+            $_SESSION['is_admin'] = false;
+        }
+    }
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    require_once(__DIR__.'/includes/header.php');
+?>
 
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SEARCH</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin.php">ADMIN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <form>
+    <div class="container mt-5">
+        <form action="admin.php" method="post">
             <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="inputUserId" placeholder="User Id">
+                <input type="text" class="form-control" id="inputUserId" placeholder="User Id" name="username">
             </div>
             <div class="form-group col-md-4">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
             </div>
             <button type="submit" class="btn btn-primary m-3">Login</button>
         </form>
     </div>
-
-    <!--I think I need to complete the following: 
-        1. Take [inputUserId] entered above and put it into PHP at XXXXXXX below
-        2. If [inputUserId] is not on database, then $user= bool(false)
-        3. If [inputUserId] is on database, then $user= 
-                 var_dump=array(2) { ["userId"]=> string(5) "admin" ["password"]=> string(8) "admin123" }     
-        4. Replace YYYYYYY with following logic: 
-            If inputPassword (from form above) = "password" on databse record then set $_SESSION[‘user_admin’] = true
-                  otherwise set $_SESSION[‘user_admin’] = false
-        5. I then need to change the navigation bar to give then NARBAR options:
-            user-admin = TRUE then NARBAR = HOME / ABOUT / SEARCH / ADMIN / CONTACT
-            user-admin = FALSEE then NARBAR = HOME / ABOUT / COMPOSER ADD / COMPOSER MODIFY / COMPOSER DELETE / LOGOFF
-        6. LOGOFF will need to set user-admin to FALSE and dynamically chnage the NARBAR    
-    -->
-
-    <?php
-    $stmt = $Conn->prepare('SELECT * FROM users WHERE userId = XXXXXXX');
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    ?>
 
     <footer class="mt-5 text-center">
         <hr>
