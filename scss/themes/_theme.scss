@@ -1,5 +1,6 @@
 body {
     background-color: $primary-color;
+    color: #FFF;
 }
 h1 {
     color: $text-color;
@@ -22,7 +23,9 @@ q {
 hr {
     background: $secondary-color;
     height: 3px;
-    margin-top: 125px;
+    margin-top: 45px;
+    
+    margin-bottom: 35px;
 }
 input, textarea{
     color: #FFF;

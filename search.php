@@ -2,88 +2,58 @@
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
 ?>
-
 <div class="container mt-5">
     <h1>Composer Search</h1>
-    <form>
-        <div class="input-group mb-5">
-            <input type="text" class="form-control" placeholder="Enter the starting character you want to search from...." aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-dark btn-search" type="button"><a class="p-1"><i class="fas fa-search"></i></a></button>
-            </div>
+    <br>
+    <p>Enter the <b>first letter</b> of the composer’s surname that you’tr inteested in and then hit the ‘Search’ button:</p>
+    <br>
+
+    <form action="search.php" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" id="inputUserId" placeholder="Search" name="searchinput">
         </div>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+    <hr>
+
     <div class="container results">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">composer_id</th>
-                    <th scope="col">first_names</th>
-                    <th scope="col">last_name</th>
-                    <th scope="col">country_birth</th>
-                    <th scope="col">musical_period</th>
-                    <th scope="col">year_born</th>
-                    <th scope="col">year_died</th>
-                    <th scope="col">composer_image</th>
-                </tr>
-                <thead>
-
-                    <?php
-                    $stmt = $Conn->prepare('SELECT * FROM composers');
-                    $stmt->execute();
-                    $composers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    foreach ($composers as $key => $composer) {
-                    ?>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-        <p>
-            <?php echo $composer['first_names']; ?>
-            <?php echo $composer['last_name']; ?>
-    </p>
-   
-        <img src='./composer-images/grieg.jpg' alt="image of composer" width="180" height="240">
-    </div>
-    <div class="col-8">
-        <br>
+        <?php
+        $searchinput = $_POST['searchinput'];
+        $byte1 = substr($searchinput,0,1);
+        $searchparm = '"' .$byte1. '%"';  // e.g. if user enters BARRY - you get "B%"
         
-        <p>Birth place: <b><?php echo $composer['country_birth']; ?></b></p>
-        <p>Period     : <b><?php echo $composer['musical_period']; ?></b></p>
-        <p>Year born  : <b><?php echo $composer['year_born']; ?></b></p>
-        <p>Year died  : <b><?php echo $composer['year_died']; ?></b></p>
-        
-     
-    </div>
-  </div>
-  <hr>
-</div>
-
-
-
-
-                     <tr>   
-                        <th scope="row"><?php echo $composer['composer_id']; ?></th>
-                        <th><?php echo $composer['first_names']; ?></th>
-                        <th><?php echo $composer['last_name']; ?></th>
-                        <th><?php echo $composer['country_birth']; ?></th>
-                        <th><?php echo $composer['musical_period']; ?></th>
-                        <th><?php echo $composer['year_born']; ?></th>
-                        <th><?php echo $composer['year_died']; ?></th>
-                        <th><?php echo $composer['composer_image']; ?></th>
-                      </tr>       
-                    <?php
-                    }
-                    ?>
-
-
-
-        </table>
+        $tempstmt1 = "SELECT * FROM composers WHERE last_name LIKE " . $searchparm . " ORDER BY last_name";
+        $stmt = $Conn->prepare($tempstmt1);
+        $stmt->execute();
+        $composers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($composers as $key => $composer) {
+        ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>
+                            <?php echo $composer['first_names']; ?>
+                            <?php echo $composer['last_name']; ?>
+                        </h4>
+                        <img src='<?php echo $composer['composer_image']; ?>' alt="image of composer" width="220" height="250">
+                    </div>
+                    <div class="col-md-8">
+                        <br>
+                        <p>Birth place: <b><?php echo $composer['country_birth']; ?></b></p>
+                        <p>Period : <b><?php echo $composer['musical_period']; ?></b></p>
+                        <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
+                        <p>Year died : <b><?php echo $composer['year_died']; ?></b></p>
+                        <p><?php echo $composer['composer_info']; ?></b></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
-
 <footer class="mt-5 text-center">
     <hr>
     <div class="container">
@@ -101,7 +71,6 @@ require_once(__DIR__ . '/includes/header.php');
     </div>
     <br>
 </footer>
-
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
