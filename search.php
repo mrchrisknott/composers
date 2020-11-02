@@ -15,9 +15,10 @@ require_once(__DIR__ . '/includes/header.php');
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
-    <hr>
+ 
 
-    <div class="container results">
+    
+        
         <?php
         $searchinput = $_POST['searchinput'];
         $byte1 = substr($searchinput,0,1);
@@ -29,7 +30,7 @@ require_once(__DIR__ . '/includes/header.php');
         $composers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($composers as $key => $composer) {
         ?>
-            <div class="container">
+            <hr>
                 <div class="row">
                     <div class="col-md-4">
                         <h4>
@@ -47,12 +48,12 @@ require_once(__DIR__ . '/includes/header.php');
                         <p><?php echo $composer['composer_info']; ?></b></p>
                     </div>
                 </div>
-                <hr>
-            </div>
+               
+            
         <?php
         }
         ?>
-    </div>
+    
 </div>
 <footer class="mt-5 text-center">
     <hr>

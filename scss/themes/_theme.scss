@@ -30,3 +30,8 @@ hr {
 input, textarea{
     color: #FFF;
 }
+
+button {
+    background-color: $secondary-color !important;
+    border-color: white !important;
+}

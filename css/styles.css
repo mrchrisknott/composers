@@ -7275,6 +7275,10 @@ hr {
 input, textarea {
   color: #FFF; }
 
+button {
+  background-color: #474222 !important;
+  border-color: white !important; }
+
 .my-carousel {
   margin-top: 100px;
   margin-bottom: 75px; }
