@@ -5,12 +5,14 @@ require_once(__DIR__ . '/includes/header.php');
 <div class="container mt-5">
     <h1>Composer Search</h1>
     <br>
-    <p>Enter the <b>first letter</b> of the composer’s surname that you’tr inteested in and then hit the ‘Search’ button:</p>
+    <p>This <b>search facility</b> will allow you to enter an alphabetic character.</p> 
+    <p>You will then be presented with a list of composers whose surname starts with that letter.</p>
+    <p>If you enter more than one character only the first character will be used.</p>
     <br>
 
     <form action="search.php" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" id="inputUserId" placeholder="Search" name="searchinput">
+            <input type="text" class="form-control" id="inputUserId" placeholder="Enter the composer's surname here" name="searchinput">
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
     </form>

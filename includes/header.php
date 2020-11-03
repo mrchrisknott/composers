@@ -30,13 +30,16 @@
                     <ul class="navbar-nav mr-auto">
                         <?php if ($_SESSION['is_admin']) { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="template.php">Add composer</a>
+                                <a class="nav-link" href="search.php">Search</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="template.php">Modify composer</a>
+                                <a class="nav-link" href="add-composer.php">Add composer</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="template.php">Delete composer</a>
+                                <a class="nav-link" href="modify-composer.php">Modify composer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="delete-composer.php">Delete composer</a>
                             </li>
 
                             <li class="nav-item">
@@ -54,7 +57,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="admin.php"><small>**admin area**</small></a>
+                                <a class="nav-link" href="admin.php"><small>      Site admin</small></a>
                             </li>
                         <?php } ?>
                     </ul>

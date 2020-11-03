@@ -25,6 +25,8 @@
 ?>
 
     <div class="container mt-5">
+    <h1>Site Administrator Login</h1>
+    <p>This page is for authorised users only and is used for maintaining the composer database.</p>
         <form action="admin.php" method="post">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="inputUserId" placeholder="User Id" name="username">
