@@ -3,6 +3,8 @@
     require_once(__DIR__.'/includes/header.php');
 ?>
 
+
+
   <div class="container">
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
@@ -59,6 +61,7 @@
         </ul>
       </div>
 
+
       <div class="glide__arrows" data-glide-el="controls">
         <button class="carousel-button glide__arrow glide__arrow--left" data-glide-dir="<">
           <i class="fa fa-chevron-left"></i>
@@ -68,6 +71,7 @@
         </button>
       </div>
     </div>
+
 
     <h1>Classical Composer Database</h1>
     <br>

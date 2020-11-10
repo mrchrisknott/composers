@@ -35,6 +35,7 @@ require_once(__DIR__ . '/includes/header.php');
         }
         if ($_POST['musical_period']) {
             $musical_period = $_POST['musical_period'];
+            echo $musical_period;
             if ($musical_period == 'na') {
                 $error = "Please enter a musical period.";
             } else {
@@ -60,7 +61,7 @@ require_once(__DIR__ . '/includes/header.php');
         if (!$error) {
             $data = [
                 "first_names" => $_POST['first_names'],
-                "last_name" => $_POST['last_name'],
+                "last_name" => $_POST['last_names'],
                 "country_birth" => $_POST['country_birth'],
                 "musical_period" => $_POST['musical_period'],
                 "year_born" => $_POST['year_born'],
@@ -72,19 +73,16 @@ require_once(__DIR__ . '/includes/header.php');
             $stmt = $Conn->prepare($query);
             // when testing an echo here outputs: INSERT INTO composers (first_names, last_name, country_birth, musical_period, year_born, year_died, composer_image, composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)
             $stmt->execute($data);
-
-            $_POST = [];
-
             //
             // Reset screen input values here??????    
 
-    ?>            <div class="alert alert-success mt-4 mb-4" role="alert">
+    ?>            <div class="alert alert-success" role="alert">
                 Your composer has been created.
             </div>
         <?php
         } else {
         ?>
-            <div class="alert alert-danger mt-4 mb-4" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <?php echo $error; ?>
             </div>
     <?php
