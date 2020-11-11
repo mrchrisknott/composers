@@ -5,9 +5,9 @@ require_once(__DIR__ . '/includes/header.php');
 <div class="container mt-5">
     <h1>Composer Search</h1>
     <br>
-    <p>This <b>search facility</b> will allow you to enter an alphabetic character.</p> 
+    <p>This <b>search facility</b> allows you to enter an alphabetic character as a search parameter.</p> 
     <p>You will then be presented with a list of composers whose surname starts with that letter.</p>
-    <p>If you enter more than one character only the first character will be used.</p>
+    <p>If you enter more than one character only the first character will be used!</p>
     <br>
 
     <form action="search.php" method="post">
@@ -39,7 +39,9 @@ require_once(__DIR__ . '/includes/header.php');
                             <?php echo $composer['first_names']; ?>
                             <?php echo $composer['last_name']; ?>
                         </h4>
-                        <img src='<?php echo $composer['composer_image']; ?>' alt="image of composer" width="220" height="250">
+                        <!-- I read that this technique can cause a loop - and it does if I substitute grieg with "note"!!!  Why? -->
+
+                        <img src='<?php echo $composer['composer_image']; ?>' alt="image of composer" onerror="this.src='./composer-images/grieg.jpg'" width="220" height="250" >
                     </div>
                     <div class="col-md-8">
                         <br>

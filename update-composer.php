@@ -3,7 +3,7 @@ require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
 ?>
 <div class="container mt-5">
-    <h1>Add composer</h1>
+    <h1>Update composer</h1>
     <?php
     if ($_POST) {
         //          Process the form here
@@ -84,10 +84,14 @@ require_once(__DIR__ . '/includes/header.php');
                 "composer_image" => $_POST['composer_image'],
                 "composer_info" => $_POST['composer_info'],
             ];
-            $query = "INSERT INTO composers (first_names,  last_name,  country_birth,  musical_period,  year_born,  year_died,  composer_image,  composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)";
+            $query = "SELECT * FROM composers WHERE composer_id = :composer_id";
             $stmt = $Conn->prepare($query);
             // when testing an echo here outputs: INSERT INTO composers (first_names, last_name, country_birth, musical_period, year_born, year_died, composer_image, composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)
-            $stmt->execute($data);
+            $stmt->execute(["composer_id" => $composer_id]);
+            $composer_data = $stmt->fetch(PDO::FETCH_ASSOC);
+            var_dump($composer_data);
+            exit();
+
 
             $_POST = [];
 
