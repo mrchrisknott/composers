@@ -1,3 +1,11 @@
+<!--
+BUGS
+1) When adding composer - enter musical period but leave another field in error.  then hit enter - musical period resets
+2) 
+
+-->
+
+
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
@@ -15,20 +23,20 @@ require_once(__DIR__ . '/includes/header.php');
             $year_born2 = (int) $_POST['year_born'];
             $year_died2 = (int) $_POST['year_died'];
             if ($year_born2 > $year_died2) {
-                $error = "Error: You can't have a composer dying before they were born.";
+                $error = "year died before year born.";
             }
         }
 
         if ($_POST['year_died']) {
             $year_died = (int) $_POST['year_died'];
             if ($year_died < 1200 || $year_died > 2020) {
-                $error = "The year died must be between 1200 and 2020.";
+                $error = "Year died must be between 1200 and 2020.";
             }
         }
 
-        if (!is_numeric($_POST['year_died'])) {
-            $error = "The year of death must be numeric";
-        } 
+        //if (!is_numeric($_POST['year_died'])) {
+        //    $error = "Year died must be numeric";
+        //} 
         
 
         if (!$_POST['year_born']) {

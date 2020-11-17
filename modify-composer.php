@@ -1,9 +1,14 @@
+<!--
+TWO BUGS
+1) When Modifying composer - the musical period doesn't pre-populate 
+2) 
+
+-->
+
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
-
 $composer_id = $_GET['id'];
-
 $query = "SELECT * FROM composers WHERE composer_id = :composer_id";
 $stmt = $Conn->prepare($query);
 $stmt->execute([
@@ -13,33 +18,34 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <div class="container mt-5">
-    <h1>Update <?php echo $composer['first_names']; ?>.</h1>
+    <h1>Modify Composer</h1>
+    <br>
     <?php
     if ($_POST) {
         //          Process the form here
         $error = false;
         //if (!$_POST['year_died']) {
-        //    $error = "Please enter the composer's year of death.";
+        //    $error = "Please enter the year the composer died.";
         //}
         if ($_POST['year_born'] && $_POST['year_died']) {
             $year_born2 = (int) $_POST['year_born'];
             $year_died2 = (int) $_POST['year_died'];
             if ($year_born2 > $year_died2) {
-                $error = "Error: You can't have a composer dying before they were born.";
+                $error = "Year died is earlier than year born.";
             }
         }
 
         if ($_POST['year_died']) {
             $year_died = (int) $_POST['year_died'];
             if ($year_died < 1200 || $year_died > 2020) {
-                $error = "The year died must be between 1200 and 2020.";
+                $error = "Year died must be between 1200 and 2020.";
             }
         }
 
-        if (!is_numeric($_POST['year_died'])) {
-            $error = "The year of death must be numeric";
-        } 
-        
+   //     if (!is_numeric($_POST['year_died'])) {
+   //         $error = "year died must be numeric";
+   //     }
+
 
         if (!$_POST['year_born']) {
             $error = "Please enter the composer's year of birth.";
@@ -49,19 +55,19 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($_POST['year_born']) {
             $year_born = (int) $_POST['year_born'];
             if ($year_born < 1200 || $year_born > 2020) {
-                $error = "The year born must be between 1200 and 2020.";
+                $error = "Year born must be between 1200 and 2020.";
             }
         }
 
         if (!is_numeric($_POST['year_born'])) {
-            $error = "The year of birth must be numeric";
-        } 
+            $error = "Year of birth must be numeric";
+        }
 
         if ($_POST['musical_period']) {
             $musical_period = $_POST['musical_period'];
             if ($musical_period == 'na') {
                 $error = "Please enter a musical period.";
-            } 
+            }
         }
 
         if (!$_POST['country_birth']) {
@@ -85,21 +91,29 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
         //}
         if (!$error) {
             $data = [
-                "composer_id" => $composer_id,
-                "first_names" => $_POST['first_names'],
-                /*"last_name" => $_POST['last_name'],
-                "country_birth" => $_POST['country_birth'],
+                "composer_id"    => $composer_id,
+                "first_names"    => $_POST['first_names'],
+                "last_name"      => $_POST['last_name'],
+                "country_birth"  => $_POST['country_birth'],
                 "musical_period" => $_POST['musical_period'],
-                "year_born" => $_POST['year_born'],
-                "year_died" => $_POST['year_died'],
+                "year_born"      => $_POST['year_born'],
+                "year_died"      => $_POST['year_died'],
                 "composer_image" => $_POST['composer_image'],
-                "composer_info" => $_POST['composer_info'],*/
+                "composer_info"  => $_POST['composer_info'],
             ];
-            $query = "UPDATE composers SET first_names = :first_names WHERE composer_id = :composer_id";
+            $query = "UPDATE composers 
+                        SET first_names    = :first_names,
+                            last_name      = :last_name,
+                            country_birth  = :country_birth,
+                            musical_period = :musical_period,
+                            year_born      = :year_born,
+                            year_died      = :year_died,
+                            composer_image = :composer_image,
+                            composer_info  = :composer_info
+                        WHERE composer_id  = :composer_id";
             $stmt = $Conn->prepare($query);
             // when testing an echo here outputs: INSERT INTO composers (first_names, last_name, country_birth, musical_period, year_born, year_died, composer_image, composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)
             $stmt->execute($data);
-
 
             $_POST = [];
 
@@ -117,7 +131,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
     <?php
         }
-    }else{
+    } else {
         $_POST = $composer;
     }
     ?>
@@ -165,7 +179,6 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                         <option value="Not known" <?php if ($_POST['musical_period'] == 'Not known') {
                                                         echo 'Not known';
                                                     } ?>>Not known</option>
-
                         -->
                     </select>
                 </div>
@@ -188,7 +201,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                     <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
                 </div>
 
-                <button type="submit" name="add_composer" class="btn btn-primary">Update composer record</button>
+                <button type="submit" name="add_composer" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>

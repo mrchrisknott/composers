@@ -36,12 +36,11 @@
                                 <a class="nav-link" href="add-composer.php">Add composer</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="select-composer.php">Modify composer</a>
+                                <a class="nav-link" href="select-modify-composer.php">Modify composer</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="delete-composer.php">Delete composer</a>
+                                <a class="nav-link" href="select-delete-composer.php">Delete composer</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout</a>
                             </li>
