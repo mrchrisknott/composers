@@ -127,7 +127,7 @@ require_once(__DIR__ . '/includes/header.php');
                 </div>
                 <!-- Must be from value: A, B, C, D or E (dropdown list?)                 -->
                 <div class="form-group">
-                    <label for="musicalperiod">Musical period</label>
+                    <label for="musicalperiod">Musical period*</label>
                     <select class="form-control" id="musicalperiod" name="musical_period" value="<?php echo $_POST['musical_period']; ?>">
                         <option value="na">- Select option -</option>
                         <option value="Medieval" <?php if ($_POST['musical_period'] == 'Medieval') {

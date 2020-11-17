@@ -1,9 +1,19 @@
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
+
+$composer_id = $_GET['id'];
+
+$query = "SELECT * FROM composers WHERE composer_id = :composer_id";
+$stmt = $Conn->prepare($query);
+$stmt->execute([
+    "composer_id" => $composer_id
+]);
+$composer = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <div class="container mt-5">
-    <h1>Update composer</h1>
+    <h1>Update <?php echo $composer['first_names']; ?>.</h1>
     <?php
     if ($_POST) {
         //          Process the form here
@@ -75,22 +85,20 @@ require_once(__DIR__ . '/includes/header.php');
         //}
         if (!$error) {
             $data = [
+                "composer_id" => $composer_id,
                 "first_names" => $_POST['first_names'],
-                "last_name" => $_POST['last_name'],
+                /*"last_name" => $_POST['last_name'],
                 "country_birth" => $_POST['country_birth'],
                 "musical_period" => $_POST['musical_period'],
                 "year_born" => $_POST['year_born'],
                 "year_died" => $_POST['year_died'],
                 "composer_image" => $_POST['composer_image'],
-                "composer_info" => $_POST['composer_info'],
+                "composer_info" => $_POST['composer_info'],*/
             ];
-            $query = "SELECT * FROM composers WHERE composer_id = :composer_id";
+            $query = "UPDATE composers SET first_names = :first_names WHERE composer_id = :composer_id";
             $stmt = $Conn->prepare($query);
             // when testing an echo here outputs: INSERT INTO composers (first_names, last_name, country_birth, musical_period, year_born, year_died, composer_image, composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)
-            $stmt->execute(["composer_id" => $composer_id]);
-            $composer_data = $stmt->fetch(PDO::FETCH_ASSOC);
-            var_dump($composer_data);
-            exit();
+            $stmt->execute($data);
 
 
             $_POST = [];
@@ -99,7 +107,7 @@ require_once(__DIR__ . '/includes/header.php');
             // Reset screen input values here??????    
 
     ?> <div class="alert alert-success mt-4 mb-4" role="alert">
-                Your composer has been created.
+                Your composer has been updated.
             </div>
         <?php
         } else {
@@ -109,6 +117,8 @@ require_once(__DIR__ . '/includes/header.php');
             </div>
     <?php
         }
+    }else{
+        $_POST = $composer;
     }
     ?>
     <div class="row">
@@ -131,7 +141,7 @@ require_once(__DIR__ . '/includes/header.php');
                 </div>
                 <!-- Must be from value: A, B, C, D or E (dropdown list?)                 -->
                 <div class="form-group">
-                    <label for="musicalperiod">Musical period</label>
+                    <label for="musicalperiod">Musical period*</label>
                     <select class="form-control" id="musicalperiod" name="musical_period" value="<?php echo $_POST['musical_period']; ?>">
                         <option value="na">- Select option -</option>
                         <option value="Medieval" <?php if ($_POST['musical_period'] == 'Medieval') {
@@ -178,7 +188,7 @@ require_once(__DIR__ . '/includes/header.php');
                     <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
                 </div>
 
-                <button type="submit" name="add_composer" class="btn btn-primary">Create composer record</button>
+                <button type="submit" name="add_composer" class="btn btn-primary">Update composer record</button>
             </form>
         </div>
     </div>

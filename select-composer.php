@@ -63,6 +63,7 @@ require_once(__DIR__ . '/includes/header.php');
                         <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
                         <p>Year died : <b><?php echo $composer['year_died']; ?></b></p>
                         <p><?php echo $composer['composer_info']; ?></b></p>
+                        <p><a href="update-composer.php?id=<?php echo $composer['composer_id'];?>">Modify this composer</a></p>
                     </div>
                 </div>
                
