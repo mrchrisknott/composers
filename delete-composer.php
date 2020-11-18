@@ -1,8 +1,3 @@
-<!--
-Bugs......
-
--->
-
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
@@ -13,7 +8,6 @@ $stmt->execute([
     "composer_id" => $composer_id
 ]);
 $composer = $stmt->fetch(PDO::FETCH_ASSOC);
-
 ?>
 <div class="container mt-5">
     <h1>Delete Composer</h1>
@@ -26,23 +20,21 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->execute($data);
         // This resets screen values (if you don't want them retained)    
         $_POST = [];
+    ?>
+        <div class="row">
+            <div class="col-lg-6">
 
-    ?> 
-    <div class="row">
-        <div class="col-lg-6" >
-
-        <div class="alert alert-success mt-5 mb-5" role="alert">This composer has been deleted</div>
-    </div>
-    </div>
-    <!--  This block of code is important (find out why) - it fails without it) -->        
+                <div class="alert alert-success mt-4 mb-5" role="alert"><b>Deleted successfully!</b></div>
+            </div>
+        </div>
+        <!--  This block of code is important (find out why) - it fails without it) -->
     <?php
     } else {
-        $_POST = $composer;   // ???????????????? <--- what is this??????
+        $_POST = $composer;
     }
     ?>
-
     <div class="row">
-        <div class="col-lg-6 add-composer">
+        <div class="col-lg-6">
             <form action="" method="post">
                 <div class="form-group">
                     <label for="firstnames">First name(s) </label>
@@ -56,7 +48,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                     <label for="countrybirth">Country of birth </label>
                     <input type="text" class="form-control" disabled id="countrybirth" name="country_birth" value="<?php echo $_POST['country_birth']; ?>">
                 </div>
-                <button type="submit" name="add_composer" class="btn btn-primary">Delete</button>
+                <button type="submit" name="add_composer" class="btn btn-primary mt-3">Delete composer</button>
             </form>
         </div>
     </div>
@@ -78,12 +70,10 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <br>
 </footer>
-
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
-
 </html>

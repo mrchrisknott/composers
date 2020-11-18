@@ -6,23 +6,21 @@ require_once(__DIR__ . '/includes/header.php');
     <h1>Modify Composer</h1>
     <br>
     <h2>Instructions</h2>
-    <p>Firstly, find the composer you want to update and click its 'Modify' button.</p?
-    <p>The following search facility will help you find the composer.</p> 
-    <p>To use this enter a character and click the 'Search' button..</p> 
-    <p>You will then be presented with a list of composers whose last name starts with that character.</p>
+    <p>Please find the composer you want to update and click teh corresponding 'Modify' button.</p?
+    <p>The search facility will help you find the composer.</p> 
+    <p>To use this enter the dirst character of the composer's surname and click the 'Search' button..</p> 
+    <p class="mb-5">You will then be presented with a list of composers whose last name starts with that character.</p>
 
-    <br>
     <form action="select-modify-composer.php" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" id="inputUserId" placeholder="Enter the first letter of the composer's surname here" name="searchinput">
+            <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
+            <button type="submit" class="btn btn-primary mt-4">Search</button>
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
     </form>
         <?php
         $searchinput = $_POST['searchinput'];
         $byte1 = substr($searchinput,0,1);
         $searchparm = '"' .$byte1. '%"';  // e.g. if user enters BARRY - you get "B%"
-
         $tempstmt1 = "SELECT * FROM composers WHERE last_name LIKE " . $searchparm . " ORDER BY last_name";
         $stmt = $Conn->prepare($tempstmt1);
         $stmt->execute();
@@ -37,7 +35,6 @@ require_once(__DIR__ . '/includes/header.php');
                             <?php echo $composer['last_name']; ?>
                         </h4>
                         <?php
-
                             if($composer['composer_image']){
                             ?>
                                 <img src="<?php echo $composer['composer_image']; ?>"" alt="image of composer" width="220" height="250" >
@@ -56,15 +53,13 @@ require_once(__DIR__ . '/includes/header.php');
                         <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
                         <p>Year died : <b><?php echo $composer['year_died']; ?></b></p>
                         <p><?php echo $composer['composer_info']; ?></b></p>
-                        <p><a href="modify-composer.php?id=<?php echo $composer['composer_id'];?>">Modify</a></p>
+                        <p><a class="xbutton" href="modify-composer.php?id=<?php echo $composer['composer_id'];?>">Modify composer</a></p>
+                        <p><a href="modify-composer.php?id=<?php echo $composer['composer_id'];?>">Modify composer</a></p>
                     </div>
                 </div>
-               
-            
         <?php
         }
         ?>
-    
 </div>
 <footer class="mt-5 text-center">
     <hr>
@@ -89,5 +84,4 @@ require_once(__DIR__ . '/includes/header.php');
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
-
 </html>

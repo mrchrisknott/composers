@@ -6,17 +6,16 @@ require_once(__DIR__ . '/includes/header.php');
     <h1>Delete Composer</h1>
     <br>
     <h2>Instructions</h2>
-    <p>Firstly, find the composer you want to update and click its 'Delete' button.</p?
-    <p>The following search facility will help you find the composer.</p> 
-    <p>To use this enter a character and click the 'Search' button..</p> 
-    <p>You will then be presented with a list of composers whose last name starts with that character.</p>
+    <p>Please find the composer you want to update and click teh corresponding 'Modify' button.</p>
+    <p>The search facility will help you find the composer.</p> 
+    <p>To use this enter the dirst character of the composer's surname and click the 'Search' button..</p> 
+    <p class="mb-5">You will then be presented with a list of composers whose last name starts with that character.</p>
 
-    <br>
     <form action="select-delete-composer.php" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" id="inputUserId" placeholder="Enter the first letter of the composer's surname here" name="searchinput">
+            <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
+            <button type="submit" class="btn btn-primary mt-3">Search</button>
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
     </form>
         <?php
         $searchinput = $_POST['searchinput'];

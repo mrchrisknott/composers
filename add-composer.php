@@ -1,8 +1,6 @@
 <!--
-BUGS
-1) When adding composer - enter musical period but leave another field in error.  then hit enter - musical period resets
-2) 
-
+BUGS / help
+1) Add composer - enter musical period and make year born error.  Hit enter and musical period resets (occurs alot but not always)
 -->
 
 
@@ -102,14 +100,19 @@ require_once(__DIR__ . '/includes/header.php');
             //
             // Reset screen input values here??????    
 
-    ?> <div class="alert alert-success mt-4 mb-4" role="alert">
-                Your composer has been created.
+    ?> 
+            <div class="row">
+            <div class="col-lg-6">
+            <div class="alert alert-success mt-4 mb-5" role="alert"><b>Added successfully!</b></div>
+            </div>
             </div>
         <?php
         } else {
         ?>
-            <div class="alert alert-danger mt-4 mb-4" role="alert">
-                <?php echo $error; ?>
+            <div class="row">
+            <div class="col-lg-6">
+            <div class="alert alert-danger mt-4 mb-5" role="alert"><?php echo $error; ?></div>
+            </div>
             </div>
     <?php
         }
@@ -121,22 +124,22 @@ require_once(__DIR__ . '/includes/header.php');
                 <!-- Mandatory (any value)                                               -->
                 <div class="form-group">
                     <label for="firstnames">First name(s)* </label>
-                    <input type="text" class="form-control" id="firstnames" name="first_names" value="<?php echo $_POST['first_names']; ?>">
+                    <input type="text" class="form-control" id="firstnames" name="first_names" maxlength="40" required value="<?php echo $_POST['first_names']; ?>">
                 </div>
                 <!-- Mandatory (any value)                                                -->
                 <div class="form-group">
                     <label for="lastname">Last name* </label>
-                    <input type="text" class="form-control" id="lastname" name="last_name" value="<?php echo $_POST['last_name']; ?>">
+                    <input type="text" class="form-control" id="lastname" name="last_name" maxlength="40" required value="<?php echo $_POST['last_name']; ?>">
                 </div>
                 <!-- Mandatory (any value)                                                -->
                 <div class="form-group">
                     <label for="countrybirth">Country of birth* </label>
-                    <input type="text" class="form-control" id="countrybirth" name="country_birth" value="<?php echo $_POST['country_birth']; ?>">
+                    <input type="text" class="form-control" id="countrybirth" name="country_birth" maxlength="40" required value="<?php echo $_POST['country_birth']; ?>">
                 </div>
                 <!-- Must be from value: A, B, C, D or E (dropdown list?)                 -->
                 <div class="form-group">
                     <label for="musicalperiod">Musical period*</label>
-                    <select class="form-control" id="musicalperiod" name="musical_period" value="<?php echo $_POST['musical_period']; ?>">
+                    <select class="form-control" id="musicalperiod" name="musical_period" required value="<?php echo $_POST['musical_period']; ?>">
                         <option value="na">- Select option -</option>
                         <option value="Medieval" <?php if ($_POST['musical_period'] == 'Medieval') {
                                                         echo 'selected';
@@ -166,23 +169,24 @@ require_once(__DIR__ . '/includes/header.php');
                 <!-- Must be 1200 to 2020                                                -->
                 <div class="form-group">
                     <label for="yearborn">Year born*</label>
-                    <input type="text" class="form-control" id="yearborn" name="year_born" value="<?php echo $_POST['year_born']; ?>">
+                    <input type="text" class="form-control" id="yearborn" name="year_born" maxlength="4" required value="<?php echo $_POST['year_born']; ?>">
                 </div>
                 <!-- Must be blank or 1200 to 2050                                                -->
                 <div class="form-group">
                     <label for="yeardied">Year died</label>
-                    <input type="text" class="form-control" id="yeardied" name="year_died" value="<?php echo $_POST['year_died']; ?>">
+                    <input type="text" class="form-control" id="yeardied" name="year_died" maxlength="4" value="<?php echo $_POST['year_died']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="composerimage">Location of composer's image</label>
-                    <input type="text" class="form-control" id="composerimage" name="composer_image" value="<?php echo $_POST['composer_image']; ?>">
+                    <input type="text" class="form-control" id="composerimage" name="composer_image"  
+                    value="<?php echo $_POST['composer_image']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="composerinfo">Composer info</label>
                     <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
                 </div>
 
-                <button type="submit" name="add_composer" class="btn btn-primary">Create composer record</button>
+                <button type="submit" name="add_composer" class="btn btn-primary">Add composer</button>
             </form>
         </div>
     </div>

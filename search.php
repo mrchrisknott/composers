@@ -5,22 +5,15 @@ require_once(__DIR__ . '/includes/header.php');
 <div class="container mt-5">
     <h1>Composer Search</h1>
     <br>
-    <p>This <b>search facility</b> allows you to enter an alphabetic character as a search parameter.</p> 
-    <p>You will then be presented with a list of composers whose surname starts with that letter.</p>
-    <p>If you enter more than one character only the first character will be used!</p>
-    <br>
-
+    <p>This search facility allows you to enter an alphabetic character as a search parameter.</p> 
+    <p>The website will then present you with a list of composers whose surname starts with that letter.</p>
+    <p class="mb-5">If you enter more than one character only the first character will be used!</p>
     <form action="search.php" method="post">
         <div class="form-group">
-            <input type="text" class="form-control" id="inputUserId" placeholder="Enter the composer's surname here" name="searchinput">
+            <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
+            <button type="submit" class="btn btn-primary mt-3">Search</button>
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
     </form>
-
- 
-
-    
-        
         <?php
         $searchinput = $_POST['searchinput'];
         $byte1 = substr($searchinput,0,1);
@@ -39,21 +32,16 @@ require_once(__DIR__ . '/includes/header.php');
                             <?php echo $composer['first_names']; ?>
                             <?php echo $composer['last_name']; ?>
                         </h4>
-                        <!-- I read that this technique can cause a loop - and it does if I substitute grieg with "note"!!!  Why? -->
-
                         <?php
-
                             if($composer['composer_image']){
                             ?>
                                 <img src="<?php echo $composer['composer_image']; ?>"" alt="image of composer" width="220" height="250" >
-
                             <?php
                             }else{
                             ?>
                                 <img src="./composer-images/note.jpg" alt="image of composer" width="220" height="250" >
                             <?php
                             }
-
                         ?>
                     </div>
                     <div class="col-md-8">
@@ -65,12 +53,9 @@ require_once(__DIR__ . '/includes/header.php');
                         <p><?php echo $composer['composer_info']; ?></b></p>
                     </div>
                 </div>
-               
-            
         <?php
         }
         ?>
-    
 </div>
 <footer class="mt-5 text-center">
     <hr>
@@ -95,5 +80,4 @@ require_once(__DIR__ . '/includes/header.php');
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
-
 </html>
