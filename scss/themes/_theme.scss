@@ -7,7 +7,6 @@ h1 {
 }
 
 .main-p-text {
-    
     font-size: 1.2em;
 }
 
@@ -16,7 +15,6 @@ p {
 }
 
 q {
-    
     color: $third-color;
 }
 
@@ -24,9 +22,9 @@ hr {
     background: $secondary-color;
     height: 3px;
     margin-top: 45px;
-    
     margin-bottom: 35px;
 }
+
 input, textarea{
     color: #FFF;
 }
@@ -36,11 +34,15 @@ button {
     border-color: white !important;
 }
 
+.xyz {
+    background-color: $secondary-color !important;
+    border-color: white !important;
+}
+
 .add-composer {
     background-color: #1d1b1b;
     padding: 20px;
     border-radius: 10px;
-
 }
 
 .glide, .h3 {

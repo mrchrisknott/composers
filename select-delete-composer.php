@@ -3,18 +3,18 @@ require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
 ?>
 <div class="container mt-5">
-    <h1>Delete Composer</h1>
+    <h1>Delete composer</h1>
     <br>
     <h2>Instructions</h2>
-    <p>Please find the composer you want to update and click teh corresponding 'Modify' button.</p>
+    <p>Please find the composer you want to update and click the corresponding 'Delete composer' button.</p>
     <p>The search facility will help you find the composer.</p> 
-    <p>To use this enter the dirst character of the composer's surname and click the 'Search' button..</p> 
+    <p>To use this enter the first character of the composer's surname and click the 'Search' button..</p> 
     <p class="mb-5">You will then be presented with a list of composers whose last name starts with that character.</p>
 
     <form action="select-delete-composer.php" method="post">
         <div class="form-group">
             <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
-            <button type="submit" class="btn btn-primary mt-3">Search</button>
+            <button type="submit" class="btn btn-primary mt-4">Search</button>
         </div>
     </form>
         <?php
@@ -55,7 +55,7 @@ require_once(__DIR__ . '/includes/header.php');
                         <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
                         <p>Year died : <b><?php echo $composer['year_died']; ?></b></p>
                         <p><?php echo $composer['composer_info']; ?></b></p>
-                        <p><a href="delete-composer.php?id=<?php echo $composer['composer_id'];?>">delete</a></p>
+                        <p><a href="delete-composer.php?id=<?php echo $composer['composer_id'];?>" class="btn btn-secondary xyz" role="button">Delete composer</a></p>
                     </div>
                 </div>
                

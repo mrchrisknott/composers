@@ -16,23 +16,26 @@
 
         if($user) {
             $_SESSION['is_admin'] = true;
+            // needs to go to another page
+            // echo "<script>window.location = 'admin.php'; </script>";
+            echo "<p>Successful</p>";  
         }else{
             $_SESSION['is_admin'] = false;
+            echo "<p>Unsuccessful</p>";
         }
     }
 
     require_once(__DIR__.'/includes/header.php');
 ?>
-
     <div class="container mt-5">
-    <h1>Site Administrator Login</h1>
-    <p>This page is for authorised users only and is used for maintaining the composer database.</p>
+    <h1>Site administration</h1>
+    <p class="mt-3">This page is for authorised users only and is used for maintaining the site's database.</p>
         <form action="admin.php" method="post">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="inputUserId" placeholder="User Id" name="username">
+            <div class="form-group col-md-4 mt-5">
+                <input type="text" class="form-control" id="inputUserId" placeholder="User Id" required name="username">
             </div>
             <div class="form-group col-md-4">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required name="password">
             </div>
             <button type="submit" class="btn btn-primary m-3">Login</button>
         </form>
@@ -61,30 +64,6 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./js/indexPage.js"></script>
     <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
-    <script>
-        new Glide('.glide', {
-            type: 'carousel',
-            perView: 5,
-            breakpoints: {
-                1500: {
-                    pweView: 5
-                },
-
-                1200: {
-                    perView: 4
-                },
-                992: {
-                    perView: 3
-                },
-                768: {
-                    perView: 2
-                },
-                576: {
-                    perView: 1
-                }
-            }
-        }).mount()
-    </script>
 </body>
 
 </html>

@@ -27,7 +27,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="alert alert-success mt-4 mb-5" role="alert"><b>Deleted successfully!</b></div>
             </div>
         </div>
-        <!--  This block of code is important (find out why) - it fails without it) -->
+        
     <?php
     } else {
         $_POST = $composer;
@@ -48,7 +48,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                     <label for="countrybirth">Country of birth </label>
                     <input type="text" class="form-control" disabled id="countrybirth" name="country_birth" value="<?php echo $_POST['country_birth']; ?>">
                 </div>
-                <button type="submit" name="add_composer" class="btn btn-primary mt-3">Delete composer</button>
+                <button type="submit" name="delete_composer" class="btn btn-primary mt-3">Delete composer</button>
             </form>
         </div>
     </div>

@@ -6,9 +6,9 @@ require_once(__DIR__ . '/includes/header.php');
     <h1>Modify Composer</h1>
     <br>
     <h2>Instructions</h2>
-    <p>Please find the composer you want to update and click teh corresponding 'Modify' button.</p?
+    <p>Please find the composer you want to update and click the corresponding 'Modify composer' button.</p>
     <p>The search facility will help you find the composer.</p> 
-    <p>To use this enter the dirst character of the composer's surname and click the 'Search' button..</p> 
+    <p>To use this enter the first character of the composer's surname and click the 'Search' button..</p> 
     <p class="mb-5">You will then be presented with a list of composers whose last name starts with that character.</p>
 
     <form action="select-modify-composer.php" method="post">
@@ -53,8 +53,7 @@ require_once(__DIR__ . '/includes/header.php');
                         <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
                         <p>Year died : <b><?php echo $composer['year_died']; ?></b></p>
                         <p><?php echo $composer['composer_info']; ?></b></p>
-                        <p><a class="xbutton" href="modify-composer.php?id=<?php echo $composer['composer_id'];?>">Modify composer</a></p>
-                        <p><a href="modify-composer.php?id=<?php echo $composer['composer_id'];?>">Modify composer</a></p>
+                        <p><a href="modify-composer.php?id=<?php echo $composer['composer_id'];?>" class="btn btn-secondary xyz" role="button" >Modify composer</a></p>
                     </div>
                 </div>
         <?php

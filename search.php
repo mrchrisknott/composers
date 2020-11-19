@@ -6,12 +6,11 @@ require_once(__DIR__ . '/includes/header.php');
     <h1>Composer Search</h1>
     <br>
     <p>This search facility allows you to enter an alphabetic character as a search parameter.</p> 
-    <p>The website will then present you with a list of composers whose surname starts with that letter.</p>
-    <p class="mb-5">If you enter more than one character only the first character will be used!</p>
+    <p class="mb-5">The website will then present you with a list of composers whose surname starts with that letter.</p>
     <form action="search.php" method="post">
         <div class="form-group">
             <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
-            <button type="submit" class="btn btn-primary mt-3">Search</button>
+            <button type="submit" class="btn btn-primary mt-4">Search</button>
         </div>
     </form>
         <?php
