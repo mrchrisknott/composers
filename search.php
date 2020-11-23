@@ -5,14 +5,20 @@ require_once(__DIR__ . '/includes/header.php');
 <div class="container mt-5">
     <h1>Composer Search</h1>
     <br>
-    <p>This search facility allows you to enter an alphabetic character as a search parameter.</p> 
-    <p class="mb-5">The website will then present you with a list of composers whose surname starts with that letter.</p>
+    <h4>This search facility allows you to enter an alphabetic character as a search parameter.</h4> 
+    <h4 class="mb-5">The website will then present you with a list of composers whose surname starts with that letter.</h4>
+
+<div class="row">
+<div class="col-md-3">
     <form action="search.php" method="post">
         <div class="form-group">
             <input type="text" class="form-control" id="inputUserId" maxlength="1" placeholder="Search..." name="searchinput">
             <button type="submit" class="btn btn-primary mt-4">Search</button>
         </div>
     </form>
+    </div>
+    </div>
+
         <?php
         $searchinput = $_POST['searchinput'];
         $byte1 = substr($searchinput,0,1);

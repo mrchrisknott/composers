@@ -5,6 +5,35 @@ require_once(__DIR__ . '/includes/header.php');
 
 <div class="container mt-5">
     <h1>Contact Us</h1>
+    <div class="row mt-5">
+    <div class="col-md-7">
+        <form id="login-form" class="mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="email">First name</label>
+                    <input type="text" class="form-control" required maxlength="20">
+                </div>
+                <div class="col-md-6">
+                    <label for="email">Last name</label>
+                    <input type="text" class="form-control" required maxlength="20">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required maxlength="40">
+                <small id="emailHelp" class="form-text ">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="comment">Message</label>
+                <textarea class="form-control" id="comment" rows="5" required maxlength="100"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-dark btn-lg mt-3">Send message</button>
+        </form>
+    </div>
+</div>
 </div>
 
 
@@ -32,4 +61,5 @@ require_once(__DIR__ . '/includes/header.php');
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
+
 </html>
