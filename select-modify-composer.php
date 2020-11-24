@@ -3,7 +3,7 @@ require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
 ?>
 <div class="container mt-5">
-    <h1>Modify Composer</h1>
+    <h1>Choose which composer you want to modify</h1>
     <br>
     <h2>Instructions</h2>
     <p>Please find the composer you want to update and click the corresponding 'Modify composer' button.</p>

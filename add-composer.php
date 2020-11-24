@@ -148,19 +148,19 @@ require_once(__DIR__ . '/includes/header.php');
                                                         echo 'selected';
                                                     } ?>>Renaissance</option>
                         <option value="Baroque" <?php if ($_POST['musical_period'] == 'Baroque') {
-                                                    echo 'Baroque';
+                                                    echo 'selected';
                                                 } ?>>Baroque</option>
                         <option value="Classical" <?php if ($_POST['musical_period'] == 'Classical') {
-                                                        echo 'Classical';
+                                                        echo 'selected';
                                                     } ?>>Classical</option>
                         <option value="Romantic" <?php if ($_POST['musical_period'] == 'Romantic') {
-                                                        echo 'Romantic';
+                                                        echo 'selected';
                                                     } ?>>Romantic</option>
                         <option value="20th/21st Century" <?php if ($_POST['musical_period'] == '20th/21st Century') {
-                                                                echo '20th/21st Century';
+                                                                echo 'selected';
                                                             } ?>>20th/21st Century</option>
                         <option value="Not known" <?php if ($_POST['musical_period'] == 'Not known') {
-                                                        echo 'Not known';
+                                                        echo 'selected';
                                                     } ?>>Not known</option>
 
                         -->
