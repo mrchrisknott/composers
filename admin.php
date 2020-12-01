@@ -34,7 +34,7 @@ require_once(__DIR__ . '/includes/header.php');
     <?php
     if ($success === true) {
     ?>
-        <div class="alert alert-success" role="alert">You have logged in.</div>
+        <div class="alert alert-success" role="alert">You are logged in.</div>
     <?php
     } else if ($success === false) {
     ?>

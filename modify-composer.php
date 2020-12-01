@@ -116,6 +116,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
             $stmt->execute($data);
             // Reset screen input values here??????    
             $_POST = [];
+            $success = true;
     ?>
             <div class="row">
                 <div class="col-lg-6">
@@ -136,6 +137,8 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
     } else {
         $_POST = $composer;
     }
+
+    if(!$success) {
     ?>
     <div class="row">
         <div class="col-lg-6 add-composer">
@@ -207,6 +210,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
             </form>
         </div>
     </div>
+    <?php } ?>
 </div>
 <footer class="mt-5 text-center">
     <hr>
