@@ -5,8 +5,8 @@ require_once(__DIR__ . '/includes/header.php');
 <div class="container mt-5">
     <h1>Composer Search</h1>
     <br>
-    <h4>This search facility allows you to enter an alphabetic character as a search parameter.</h4> 
-    <h4 class="mb-5">The website will then present you with a list of composers whose surname starts with that letter.</h4>
+    <p>This search facility allows you to enter an alphabetic character as a search parameter.</p> 
+    <p class="mb-5">The website will then present you with a list of composers whose surname starts with that letter.</p>
 
 <div class="row">
 <div class="col-md-3">
