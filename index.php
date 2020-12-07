@@ -5,10 +5,12 @@
 
 
 
+
   <div class="container">
+  <h1 class="mt-5 mb-5">Classical Composer Database</h1>
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides my-carousel">
+        <ul class="glide__slides">
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/beethoven.jpg');">
@@ -73,8 +75,6 @@
     </div>
 
 
-    <h1>Classical Composer Database</h1>
-    <br>
     <p class="main-p-text">This website can be used to explore the world of classical music.</p>
 
     <p class="main-p-text">Use the search facility to learn about the composers. You can find out when they lived, what
