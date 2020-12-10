@@ -28,8 +28,8 @@ if ($_POST) {
 require_once(__DIR__ . '/includes/header.php');
 ?>
 <div class="container mt-5">
-    <h1>Site administration</h1>
-    <p class="mt-3">This page is for maintaining the composer database (authorised users only).</p>
+    <h1>Login</h1>
+    <p class="mt-3">This page is currently for authorised users only.</p>
     
     <?php
     if ($success === true) {

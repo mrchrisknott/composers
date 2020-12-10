@@ -33,7 +33,13 @@
                                 <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="about.php">About</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="search.php">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.php">Contact</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="add-composer.php">Add composer</a>
@@ -60,9 +66,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.php">Contact</a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" href="admin.php"><small>      Site admin</small></a>
+                                <a class="nav-link" href="admin.php">Login</a>
                             </li>
                         <?php } ?>
                     </ul>

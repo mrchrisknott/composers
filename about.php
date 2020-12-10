@@ -9,8 +9,6 @@ require_once(__DIR__ . '/includes/header.php');
     <p>Founded in 1982 by John Smith, ABC Music Publishing has grown to be one of the UK’s largest distributer of classical music recordings.  </p> 
     <p>The business started out as a mail order operation but quickly expanded on to the high street in the 1990’s.  Today, ABC Music Recordings sells its music from a network of over one hundred high street retailers and is currently expanding into the world of eCommerce.</p>
 </div>
-
-
 <footer class="mt-5 text-center">
     <hr>
     <div class="container">
