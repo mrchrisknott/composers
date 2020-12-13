@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC Music Publishing</title>
+    <meta name="Description" content="Home page for the composer website.">
     <link href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css" rel="stylesheet">
     <link href="./node_modules/@glidejs/glide/dist/css/glide.theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">

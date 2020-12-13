@@ -2,10 +2,6 @@
     require_once(__DIR__.'/includes/db.php');
     require_once(__DIR__.'/includes/header.php');
 ?>
-
-
-
-
   <div class="container">
   <h1 class="mt-5 mb-5">Classical Composer Database</h1>
     <div class="glide">
@@ -15,60 +11,58 @@
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/beethoven.jpg');">
               </div>
-              <h3>Beethoven</h3>
+              <h2 class="carousel-h2">Beethoven</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/grieg.jpg');">
               </div>
-              <h3>Grieg</h3>
+              <h2 class="carousel-h2">Grieg</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/handel.jpg');">
               </div>
-              <h3>Handel</h3>
+              <h2 class="carousel-h2">Handel</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/liszt.jpg');">
               </div>
-              <h3>Liszt</h3>
+              <h2 class="carousel-h2">Liszt</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/mozart.jpg');">
               </div>
-              <h3>Mozart</h3>
+              <h2 class="carousel-h2">Mozart</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/schubert.jpg');">
               </div>
-              <h3>Schubert</h3>
+              <h2 class="carousel-h2">Schubert</h2>
             </div>
           </li>
           <li class="glide__slide">
             <div class="composer-slide-card">
               <div class="composer-slide-card-img" style="background-image: url('./composer-images/tchaikovsky.jpg');">
               </div>
-              <h3>Tchaikovsky</h3>
+              <h2 class="carousel-h2">Tchaikovsky</h2>
             </div>
           </li>
         </ul>
       </div>
-
-
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="carousel-button glide__arrow glide__arrow--left" data-glide-dir="<">
+        <button class="carousel-button glide__arrow glide__arrow--left" aria-label="Move carousel left" data-glide-dir="<">
           <i class="fa fa-chevron-left"></i>
         </button>
-        <button class="carousel-button glide__arrow glide__arrow--right" data-glide-dir=">">
+        <button class="carousel-button glide__arrow glide__arrow--right" aria-label="Move carousel right" data-glide-dir=">">
           <i class="fa fa-chevron-right"></i>
         </button>
       </div>
@@ -95,10 +89,10 @@
           <p class="copyright">&copy;ABC Music Recording Plc - Created for educational purposes</p>
         </div>
         <div class="col-md-4">
-          <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
-          <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
-          <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
-          <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+          <a class="p-1 social-media" aria-label="Facebook" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+          <a class="p-1 social-media" aria-label="Google Plus" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+          <a class="p-1 social-media" aria-label="Twitter" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+          <a class="p-1 social-media" aria-label="Instagram" href="#"><i class="fab fa-2x fa-instagram"></i></a>
         </div>
       </div>
     </div>
