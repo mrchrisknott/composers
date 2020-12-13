@@ -3,7 +3,6 @@ BUGS / help
 1) Add composer - enter musical period and make year born error.  Hit enter and musical period resets (occurs alot but not always)
 -->
 
-
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
