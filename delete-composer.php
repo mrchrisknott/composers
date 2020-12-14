@@ -27,7 +27,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="alert alert-success mt-4 mb-5" role="alert"><b>Deleted successfully!</b></div>
             </div>
         </div>
-        
+
     <?php
     } else {
         $_POST = $composer;
@@ -61,10 +61,10 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                 <p class="copyright">&copy;ABC Music Recording Plc - Created for educational purposes</p>
             </div>
             <div class="col-md-4">
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                <a class="p-1 social-media" aria-label="Facebook" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+                <a class="p-1 social-media" aria-label="Google Plus" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+                <a class="p-1 social-media" aria-label="Twitter" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+                <a class="p-1 social-media" aria-label="Instagram" href="#"><i class="fab fa-2x fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -76,4 +76,5 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
+
 </html>

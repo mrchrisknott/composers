@@ -132,84 +132,84 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="alert alert-danger mt-4 mb-5" role="alert"><?php echo $error; ?></div>
                 </div>
             </div>
-    <?php
+        <?php
         }
     } else {
         $_POST = $composer;
     }
 
-    if(!$success) {
-    ?>
-    <div class="row">
-        <div class="col-lg-6 add-composer">
-            <form action="" method="post">
-                <!-- Mandatory (any value)                                               -->
-                <div class="form-group">
-                    <label for="firstnames">First name(s)* </label>
-                    <input type="text" class="form-control" id="firstnames" name="first_names" maxlength="40" required value="<?php echo $_POST['first_names']; ?>">
-                </div>
-                <!-- Mandatory (any value)                                                -->
-                <div class="form-group">
-                    <label for="lastname">Last name* </label>
-                    <input type="text" class="form-control" id="lastname" name="last_name" maxlength="40" required value="<?php echo $_POST['last_name']; ?>">
-                </div>
-                <!-- Mandatory (any value)                                                -->
-                <div class="form-group">
-                    <label for="countrybirth">Country of birth* </label>
-                    <input type="text" class="form-control" id="countrybirth" name="country_birth" maxlength="40" required value="<?php echo $_POST['country_birth']; ?>">
-                </div>
-                <!-- Must be from value: A, B, C, D or E (dropdown list?)                 -->
-                <div class="form-group">
-                    <label for="musicalperiod">Musical period*</label>
-                    <select class="form-control" id="musicalperiod" name="musical_period" required value="<?php echo $_POST['musical_period']; ?>">
-                        <option value="na">- Select option -</option>
-                        <option value="Medieval" <?php if ($_POST['musical_period'] == 'Medieval') {
+    if (!$success) {
+        ?>
+        <div class="row">
+            <div class="col-lg-6 add-composer">
+                <form action="" method="post">
+                    <!-- Mandatory (any value)                                               -->
+                    <div class="form-group">
+                        <label for="firstnames">First name(s)* </label>
+                        <input type="text" class="form-control" id="firstnames" name="first_names" maxlength="40" required value="<?php echo $_POST['first_names']; ?>">
+                    </div>
+                    <!-- Mandatory (any value)                                                -->
+                    <div class="form-group">
+                        <label for="lastname">Last name* </label>
+                        <input type="text" class="form-control" id="lastname" name="last_name" maxlength="40" required value="<?php echo $_POST['last_name']; ?>">
+                    </div>
+                    <!-- Mandatory (any value)                                                -->
+                    <div class="form-group">
+                        <label for="countrybirth">Country of birth* </label>
+                        <input type="text" class="form-control" id="countrybirth" name="country_birth" maxlength="40" required value="<?php echo $_POST['country_birth']; ?>">
+                    </div>
+                    <!-- Must be from value: A, B, C, D or E (dropdown list?)                 -->
+                    <div class="form-group">
+                        <label for="musicalperiod">Musical period*</label>
+                        <select class="form-control" id="musicalperiod" name="musical_period" required value="<?php echo $_POST['musical_period']; ?>">
+                            <option value="na">- Select option -</option>
+                            <option value="Medieval" <?php if ($_POST['musical_period'] == 'Medieval') {
+                                                            echo 'selected';
+                                                        } ?>>Medieval</option>
+                            <option value="Renaissance" <?php if ($_POST['musical_period'] == 'Renaissance') {
+                                                            echo 'selected';
+                                                        } ?>>Renaissance</option>
+                            <option value="Baroque" <?php if ($_POST['musical_period'] == 'Baroque') {
                                                         echo 'selected';
-                                                    } ?>>Medieval</option>
-                        <option value="Renaissance" <?php if ($_POST['musical_period'] == 'Renaissance') {
-                                                        echo 'selected';
-                                                    } ?>>Renaissance</option>
-                        <option value="Baroque" <?php if ($_POST['musical_period'] == 'Baroque') {
-                                                    echo 'selected';
-                                                } ?>>Baroque</option>
-                        <option value="Classical" <?php if ($_POST['musical_period'] == 'Classical') {
-                                                        echo 'selected';
-                                                    } ?>>Classical</option>
-                        <option value="Romantic" <?php if ($_POST['musical_period'] == 'Romantic') {
-                                                        echo 'selected';
-                                                    } ?>>Romantic</option>
-                        <option value="20th/21st Century" <?php if ($_POST['musical_period'] == '20th/21st Century') {
-                                                                echo 'selected';
-                                                            } ?>>20th/21st Century</option>
-                        <option value="Not known" <?php if ($_POST['musical_period'] == 'Not known') {
-                                                        echo 'selected';
-                                                    } ?>>Not known</option>
-                        -->
-                    </select>
-                </div>
-                <!-- Must be 1200 to 2020                                                -->
-                <div class="form-group">
-                    <label for="yearborn">Year born*</label>
-                    <input type="text" class="form-control" id="yearborn" name="year_born" maxlength="4" required value="<?php echo $_POST['year_born']; ?>">
-                </div>
-                <!-- Must be blank or 1200 to 2050                                                -->
-                <div class="form-group">
-                    <label for="yeardied">Year died</label>
-                    <input type="text" class="form-control" id="yeardied" name="year_died" maxlength="4" value="<?php echo $_POST['year_died']; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="composerimage">Location of composer's image</label>
-                    <input type="text" class="form-control" id="composerimage" name="composer_image" value="<?php echo $_POST['composer_image']; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="composerinfo">Composer info</label>
-                    <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
-                </div>
+                                                    } ?>>Baroque</option>
+                            <option value="Classical" <?php if ($_POST['musical_period'] == 'Classical') {
+                                                            echo 'selected';
+                                                        } ?>>Classical</option>
+                            <option value="Romantic" <?php if ($_POST['musical_period'] == 'Romantic') {
+                                                            echo 'selected';
+                                                        } ?>>Romantic</option>
+                            <option value="20th/21st Century" <?php if ($_POST['musical_period'] == '20th/21st Century') {
+                                                                    echo 'selected';
+                                                                } ?>>20th/21st Century</option>
+                            <option value="Not known" <?php if ($_POST['musical_period'] == 'Not known') {
+                                                            echo 'selected';
+                                                        } ?>>Not known</option>
+                            -->
+                        </select>
+                    </div>
+                    <!-- Must be 1200 to 2020                                                -->
+                    <div class="form-group">
+                        <label for="yearborn">Year born*</label>
+                        <input type="text" class="form-control" id="yearborn" name="year_born" maxlength="4" required value="<?php echo $_POST['year_born']; ?>">
+                    </div>
+                    <!-- Must be blank or 1200 to 2050                                                -->
+                    <div class="form-group">
+                        <label for="yeardied">Year died</label>
+                        <input type="text" class="form-control" id="yeardied" name="year_died" maxlength="4" value="<?php echo $_POST['year_died']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="composerimage">Location of composer's image</label>
+                        <input type="text" class="form-control" id="composerimage" name="composer_image" value="<?php echo $_POST['composer_image']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="composerinfo">Composer info</label>
+                        <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
+                    </div>
 
-                <button type="submit" name="add_composer" class="btn btn-primary">Modify composer</button>
-            </form>
+                    <button type="submit" name="add_composer" class="btn btn-primary">Modify composer</button>
+                </form>
+            </div>
         </div>
-    </div>
     <?php } ?>
 </div>
 <footer class="mt-5 text-center">
@@ -220,10 +220,10 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                 <p class="copyright">&copy;ABC Music Recording Plc - Created for educational purposes</p>
             </div>
             <div class="col-md-4">
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                <a class="p-1 social-media" aria-label="Facebook" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+                <a class="p-1 social-media" aria-label="Google Plus" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+                <a class="p-1 social-media" aria-label="Twitter" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+                <a class="p-1 social-media" aria-label="Instagram" href="#"><i class="fab fa-2x fa-instagram"></i></a>
             </div>
         </div>
     </div>

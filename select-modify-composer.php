@@ -47,7 +47,7 @@ require_once(__DIR__ . '/includes/header.php');
                         ?>
                     </div>
                     <div class="col-md-8">
-                        <br>
+                        <br><br><br>
                         <p>Birth place: <b><?php echo $composer['country_birth']; ?></b></p>
                         <p>Period : <b><?php echo $composer['musical_period']; ?></b></p>
                         <p>Year born : <b><?php echo $composer['year_born']; ?></b></p>
@@ -68,10 +68,10 @@ require_once(__DIR__ . '/includes/header.php');
                 <p class="copyright">&copy;ABC Music Recording Plc - Created for educational purposes</p>
             </div>
             <div class="col-md-4">
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+            <a class="p-1 social-media" aria-label="Facebook" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+          <a class="p-1 social-media" aria-label="Google Plus" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+          <a class="p-1 social-media" aria-label="Twitter" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+          <a class="p-1 social-media" aria-label="Instagram" href="#"><i class="fab fa-2x fa-instagram"></i></a>
             </div>
         </div>
     </div>

@@ -198,10 +198,10 @@ require_once(__DIR__ . '/includes/header.php');
                 <p class="copyright">&copy;ABC Music Recording Plc - Created for educational purposes</p>
             </div>
             <div class="col-md-4">
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
-                <a class="p-1 social-media" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+            <a class="p-1 social-media" aria-label="Facebook" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+          <a class="p-1 social-media" aria-label="Google Plus" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+          <a class="p-1 social-media" aria-label="Twitter" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+          <a class="p-1 social-media" aria-label="Instagram" href="#"><i class="fab fa-2x fa-instagram"></i></a>
             </div>
         </div>
     </div>
