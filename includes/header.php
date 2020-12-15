@@ -19,7 +19,7 @@
       <a href="index.html"><img src="./images/whiteSquare.jpg" alt="Logo" /></a>
     </div>
     -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.php">ABC Music Publishing</a>
 

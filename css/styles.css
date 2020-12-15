@@ -7220,6 +7220,10 @@ header .page-header-top {
   padding: 40px 40px 40px 0; }
   header .page-header-top img {
     max-width: 300px; }
+header a.nav-link {
+  color: #fff; }
+  header a.nav-link:hover, header a.nav-link:focus {
+    color: whitesmoke; }
 
 header nav {
   background-color: #474222; }
@@ -7227,7 +7231,7 @@ header nav {
   header nav a:hover,
   header nav a:active {
     font-weight: 500;
-    color: #393e4f; }
+    color: #FFF; }
 
 .composer-slide-card {
   margin: 10px;
@@ -7290,7 +7294,7 @@ button {
 .glide, .h3 {
   color: #2c2c2c; }
 
-h2.carousel-h2 {
+.carousel-h2 {
   font-size: 1.1rem; }
 
 .my-carousel {

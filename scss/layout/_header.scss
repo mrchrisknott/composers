@@ -5,4 +5,12 @@ header {
             max-width: 300px;
         }
     }
+    a.nav-link {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: rgb(245, 245, 245);
+        }
+    }
 }

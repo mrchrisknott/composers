@@ -30,10 +30,10 @@ require_once(__DIR__ . '/includes/header.php');
             <hr>
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>
+                        <h3>
                             <?php echo $composer['first_names']; ?>
                             <?php echo $composer['last_name']; ?>
-                        </h4>
+                        </h3>
                         <?php
                             if($composer['composer_image']){
                             ?>

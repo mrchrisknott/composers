@@ -1,10 +1,3 @@
-<!--
-TWO BUGS
-1) When Modifying composer - the musical period doesn't pre-populate 
-2) 
-
--->
-
 <?php
 require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/header.php');
@@ -15,18 +8,13 @@ $stmt->execute([
     "composer_id" => $composer_id
 ]);
 $composer = $stmt->fetch(PDO::FETCH_ASSOC);
-
 ?>
 <div class="container mt-5">
     <h1>Modify Composer</h1>
     <br>
     <?php
     if ($_POST) {
-        //          Process the form here
         $error = false;
-        //if (!$_POST['year_died']) {
-        //    $error = "Please enter the year the composer died.";
-        //}
         if ($_POST['year_born'] && $_POST['year_died']) {
             $year_born2 = (int) $_POST['year_born'];
             $year_died2 = (int) $_POST['year_died'];
@@ -34,42 +22,30 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
                 $error = "Year died is earlier than year born.";
             }
         }
-
         if ($_POST['year_died']) {
             $year_died = (int) $_POST['year_died'];
             if ($year_died < 1200 || $year_died > 2020) {
                 $error = "Year died must be between 1200 and 2020.";
             }
         }
-
-        //     if (!is_numeric($_POST['year_died'])) {
-        //         $error = "year died must be numeric";
-        //     }
-
-
         if (!$_POST['year_born']) {
             $error = "Please enter the composer's year of birth.";
         }
-
-
         if ($_POST['year_born']) {
             $year_born = (int) $_POST['year_born'];
             if ($year_born < 1200 || $year_born > 2020) {
                 $error = "Year born must be between 1200 and 2020.";
             }
         }
-
         if (!is_numeric($_POST['year_born'])) {
             $error = "Year of birth must be numeric";
         }
-
         if ($_POST['musical_period']) {
             $musical_period = $_POST['musical_period'];
             if ($musical_period == 'na') {
                 $error = "Please enter a musical period.";
             }
         }
-
         if (!$_POST['country_birth']) {
             $error = "Please enter the composer's country of birth.";
         }
@@ -85,10 +61,6 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$_POST['musical_period']) {
             $error = "Please enter the composer's musical period.";
         }
-        // Validation
-        //if(!$_POST['first_names'] || !$_POST['last_names']) {
-        //    $error = "Required fields missing.";
-        //}
         if (!$error) {
             $data = [
                 "composer_id"    => $composer_id,
@@ -114,7 +86,7 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
             $stmt = $Conn->prepare($query);
             // when testing an echo here outputs: INSERT INTO composers (first_names, last_name, country_birth, musical_period, year_born, year_died, composer_image, composer_info) VALUES (:first_names, :last_name, :country_birth, :musical_period, :year_born, :year_died, :composer_image, :composer_info)
             $stmt->execute($data);
-            // Reset screen input values here??????    
+            // Reset screen input values here    
             $_POST = [];
             $success = true;
     ?>
@@ -137,7 +109,6 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
     } else {
         $_POST = $composer;
     }
-
     if (!$success) {
         ?>
         <div class="row">
@@ -229,12 +200,10 @@ $composer = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <br>
 </footer>
-
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./js/indexPage.js"></script>
 <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
 </body>
-
 </html>
