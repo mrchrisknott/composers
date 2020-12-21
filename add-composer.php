@@ -176,13 +176,13 @@ require_once(__DIR__ . '/includes/header.php');
                     <input type="text" class="form-control" id="yeardied" name="year_died" maxlength="4" value="<?php echo $_POST['year_died']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="composerimage">Location of composer's image</label>
-                    <input type="text" class="form-control" id="composerimage" name="composer_image"  
+                    <label for="composerimage">Location of the composer's image</label>
+                    <input type="text" class="form-control" id="composerimage" name="composer_image" maxlength="40"  
                     value="<?php echo $_POST['composer_image']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="composerinfo">Composer info</label>
-                    <input type="text" class="form-control" id="composerinfo" name="composer_info" value="<?php echo $_POST['composer_info']; ?>">
+                    <input type="text" class="form-control" id="composerinfo" name="composer_info" maxlength="200" value="<?php echo $_POST['composer_info']; ?>">
                 </div>
 
                 <button type="submit" name="add_composer" class="btn btn-primary">Add composer</button>

@@ -8,7 +8,7 @@ require_once(__DIR__ . '/includes/header.php');
     <h2>Instructions</h2>
     <p>Please find the composer you want to update and click the corresponding 'Modify composer' button.</p>
     <p>The search facility will help you find the composer.</p> 
-    <p>To use this enter the first character of the composer's surname and click the 'Search' button..</p> 
+    <p>To use this enter the first character of the composer's surname and click the 'Search' button.</p> 
     <p class="mb-5">You will then be presented with a list of composers whose last name starts with that character.</p>
 
     <form action="select-modify-composer.php" method="post">
