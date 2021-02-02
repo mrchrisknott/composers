@@ -1,7 +1,10 @@
 <?php
+//            Report all errors except E_NOTICE
 error_reporting(E_ALL & ~E_NOTICE);
+//            ini_set — Sets the value of a configuration option
 ini_set('display_errors', 'On');
 
+//            session_start — Start new or resume existing session
 session_start();
 
 $db_config = [
